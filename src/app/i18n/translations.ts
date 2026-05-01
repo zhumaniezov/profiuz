@@ -8,10 +8,10 @@ export const translations = {
     language: "Ўзб",
 
     // Hero
-    heroTitle: "Найдите проверенных специалистов для любой задачи",
+    heroTitle: "Быстрый поиск специалистов",
     heroSubtitle: "клиентов уже нашли своего профи",
     heroClientCount: "12 846",
-    searchPlaceholder: "Какого специалиста ищете?",
+    searchPlaceholder: "Услуга или специалист",
     searchButton: "Найти",
 
     // Value propositions
@@ -20,7 +20,9 @@ export const translations = {
     prop2Title: "Лучшая цена",
     prop2Desc: "Сравните цены от разных специалистов и выберите лучший вариант",
     prop3Title: "Проверенные профи",
-    prop3Desc: "Мы проверяем документы, опыт работы и образование каждого специалиста",
+    prop3Desc: "Просим специалистов подтвердить паспорт, опыт работы и образование",
+    prop4Title: "Настоящие отзывы",
+    prop4Desc: "Отзыв можно оставить только после работы. Мы проверяем каждый",
 
     // Categories
     categoriesTitle: "Популярные услуги",
@@ -93,10 +95,10 @@ export const translations = {
     language: "Рус",
 
     // Hero
-    heroTitle: "Har qanday vazifa uchun tekshirilgan mutaxassislarni toping",
+    heroTitle: "Mutaxassislarni tez qidirish",
     heroSubtitle: "mijozlar o'z professionalini topdi",
     heroClientCount: "12 846",
-    searchPlaceholder: "Qanday mutaxassis qidiryapsiz?",
+    searchPlaceholder: "Xizmat yoki mutaxassis",
     searchButton: "Topish",
 
     // Value propositions
@@ -105,7 +107,9 @@ export const translations = {
     prop2Title: "Eng yaxshi narx",
     prop2Desc: "Turli mutaxassislarning narxlarini solishtiring va eng yaxshi variantni tanlang",
     prop3Title: "Tekshirilgan professionallar",
-    prop3Desc: "Biz har bir mutaxassisning hujjatlari, ish tajribasi va ma'lumotini tekshiramiz",
+    prop3Desc: "Mutaxassislardan pasport, ish tajribasi va ma'lumotini tasdiqlab berishni so'raymiz",
+    prop4Title: "Haqiqiy sharhlar",
+    prop4Desc: "Sharh faqat ish tugagandan keyin qoldirish mumkin. Har birini tekshiramiz",
 
     // Categories
     categoriesTitle: "Mashhur xizmatlar",

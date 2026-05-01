@@ -8,42 +8,27 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header-inner">
-        <a href="/" className="header-logo" id="header-logo">
-          <span className="logo-profi">PROFI</span>
-          <span className="logo-dot">.</span>
-          <span className="logo-uz">UZ</span>
-        </a>
+        <div className="header-left">
+          <a href="/" className="header-logo" id="header-logo">
+            <span className="logo-profi">профи</span>
+            <span className="logo-dot">:</span>
+            <span className="logo-uz">уз</span>
+          </a>
 
-        <nav className="header-nav" id="header-nav">
-          <a href="#categories" className="header-nav-link" id="nav-services">
-            {locale === "ru" ? "Услуги" : "Xizmatlar"}
-          </a>
-          <a href="#how-it-works" className="header-nav-link" id="nav-how-it-works">
-            {locale === "ru" ? "Как это работает" : "Bu qanday ishlaydi"}
-          </a>
-          <a href="#reviews" className="header-nav-link" id="nav-reviews">
-            {locale === "ru" ? "Отзывы" : "Sharhlar"}
-          </a>
-        </nav>
+          <div className="header-city">
+            {locale === "ru" ? "Ташкент" : "Toshkent"}
+            <span className="header-city-arrow">▼</span>
+          </div>
+        </div>
 
         <div className="header-actions">
-          <button
-            className="lang-toggle"
-            onClick={toggleLocale}
-            id="lang-toggle-btn"
-            aria-label="Toggle language"
-          >
-            <span className="lang-globe">🌐</span>
-            <span>{t("language")}</span>
+          <button className="lang-toggle" onClick={toggleLocale} id="lang-toggle-btn" aria-label="Toggle language">
+            {t("language")}
           </button>
 
-          <a
-            href="#specialist"
-            className="header-specialist-link"
-            id="specialist-link"
-          >
+          <a href="#specialist" className="header-specialist-link" id="specialist-link">
             {t("siteForSpecialists")}
-            <span className="arrow-icon">↗</span>
+            <span className="arrow-icon"> ↗</span>
           </a>
 
           <a href="#login" className="header-login-btn" id="login-btn">
