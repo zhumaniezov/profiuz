@@ -3,9 +3,11 @@
 import React, { useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { Modal } from "./Modal";
+import { useRouter } from "next/navigation";
 
 export default function Categories() {
   const { t, locale } = useLanguage();
+  const router = useRouter();
   const [selectedCat, setSelectedCat] = useState<string | null>(null);
 
   const catKey = (k: string): any => k;
@@ -47,7 +49,7 @@ export default function Categories() {
         <p style={{ marginBottom: 24, color: "var(--color-muted)" }}>
           {selectedCat ? t(catKey(`${selectedCat}Desc`)) : ""}
         </p>
-        <button className="btn-primary btn-block" onClick={() => setSelectedCat(null)}>
+        <button className="btn-primary btn-block" onClick={() => { setSelectedCat(null); router.push("/search"); }}>
           {locale === "ru" ? "Найти специалиста" : "Mutaxassisni topish"}
         </button>
       </Modal>

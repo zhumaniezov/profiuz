@@ -2,6 +2,7 @@
 
 import { useAppContext } from "../context/AppContext";
 import { useLanguage } from "../i18n/LanguageContext";
+import Link from "next/link";
 
 export default function Directory() {
   const { city } = useAppContext();
@@ -26,12 +27,12 @@ export default function Directory() {
               <span className="dir-count">222 458</span>
             </div>
             <ul>
-              <li><a href="#" className="directory-link">{locale === "ru" ? "Английский язык" : "Ingliz tili"}</a></li>
-              <li><a href="#" className="directory-link">{locale === "ru" ? "Математика" : "Matematika"}</a></li>
-              <li><a href="#" className="directory-link">{locale === "ru" ? "Русский язык" : "Rus tili"}</a></li>
-              <li><a href="#" className="directory-link">{locale === "ru" ? "Начальная школа" : "Boshlang'ich maktab"}</a></li>
-              <li><a href="#" className="directory-link">{locale === "ru" ? "Музыка" : "Musiqa"}</a></li>
-              <li><a href="#" className="directory-link directory-link-all">{locale === "ru" ? "Все 1920 предметов" : "Barcha 1920 fanlar"}</a></li>
+              <li><Link href="/search" className="directory-link">{locale === "ru" ? "Английский язык" : "Ingliz tili"}</Link></li>
+              <li><Link href="/search" className="directory-link">{locale === "ru" ? "Математика" : "Matematika"}</Link></li>
+              <li><Link href="/search" className="directory-link">{locale === "ru" ? "Русский язык" : "Rus tili"}</Link></li>
+              <li><Link href="/search" className="directory-link">{locale === "ru" ? "Начальная школа" : "Boshlang'ich maktab"}</Link></li>
+              <li><Link href="/search" className="directory-link">{locale === "ru" ? "Музыка" : "Musiqa"}</Link></li>
+              <li><Link href="/search" className="directory-link directory-link-all">{locale === "ru" ? "Все 1920 предметов" : "Barcha 1920 fanlar"}</Link></li>
             </ul>
           </div>
           <div className="directory-col">
@@ -40,12 +41,12 @@ export default function Directory() {
               <span className="dir-count">199 706</span>
             </div>
             <ul>
-              <li><a href="#" className="directory-link">{locale === "ru" ? "Сантехники" : "Santexniklar"}</a></li>
-              <li><a href="#" className="directory-link">{locale === "ru" ? "Электрики" : "Elektriklar"}</a></li>
-              <li><a href="#" className="directory-link">{locale === "ru" ? "Плиточники" : "Plitkachilar"}</a></li>
-              <li><a href="#" className="directory-link">{locale === "ru" ? "Штукатуры" : "Suvoqchilar"}</a></li>
-              <li><a href="#" className="directory-link">{locale === "ru" ? "Ремонт под ключ" : "Kalit taslim ta'mir"}</a></li>
-              <li><a href="#" className="directory-link directory-link-all">{locale === "ru" ? "Все 1993 услуги" : "Barcha 1993 xizmatlar"}</a></li>
+              <li><Link href="/search" className="directory-link">{locale === "ru" ? "Сантехники" : "Santexniklar"}</Link></li>
+              <li><Link href="/search" className="directory-link">{locale === "ru" ? "Электрики" : "Elektriklar"}</Link></li>
+              <li><Link href="/search" className="directory-link">{locale === "ru" ? "Плиточники" : "Plitkachilar"}</Link></li>
+              <li><Link href="/search" className="directory-link">{locale === "ru" ? "Штукатуры" : "Suvoqchilar"}</Link></li>
+              <li><Link href="/search" className="directory-link">{locale === "ru" ? "Ремонт под ключ" : "Kalit taslim ta'mir"}</Link></li>
+              <li><Link href="/search" className="directory-link directory-link-all">{locale === "ru" ? "Все 1993 услуги" : "Barcha 1993 xizmatlar"}</Link></li>
             </ul>
           </div>
           <div className="directory-col">
@@ -54,12 +55,12 @@ export default function Directory() {
               <span className="dir-count">77 340</span>
             </div>
             <ul>
-              <li><a href="#" className="directory-link">{locale === "ru" ? "Макияж" : "Makiyaj"}</a></li>
-              <li><a href="#" className="directory-link">{locale === "ru" ? "Маникюр" : "Manikyur"}</a></li>
-              <li><a href="#" className="directory-link">{locale === "ru" ? "Причёски" : "Soch turmagi"}</a></li>
-              <li><a href="#" className="directory-link">{locale === "ru" ? "Эпиляция" : "Epilyatsiya"}</a></li>
-              <li><a href="#" className="directory-link">{locale === "ru" ? "Стилисты" : "Stilistlar"}</a></li>
-              <li><a href="#" className="directory-link directory-link-all">{locale === "ru" ? "Все 1992 услуги" : "Barcha 1992 xizmatlar"}</a></li>
+              <li><Link href="/search" className="directory-link">{locale === "ru" ? "Макияж" : "Makiyaj"}</Link></li>
+              <li><Link href="/search" className="directory-link">{locale === "ru" ? "Маникюр" : "Manikyur"}</Link></li>
+              <li><Link href="/search" className="directory-link">{locale === "ru" ? "Причёски" : "Soch turmagi"}</Link></li>
+              <li><Link href="/search" className="directory-link">{locale === "ru" ? "Эпиляция" : "Epilyatsiya"}</Link></li>
+              <li><Link href="/search" className="directory-link">{locale === "ru" ? "Стилисты" : "Stilistlar"}</Link></li>
+              <li><Link href="/search" className="directory-link directory-link-all">{locale === "ru" ? "Все 1992 услуги" : "Barcha 1992 xizmatlar"}</Link></li>
             </ul>
           </div>
           <div className="directory-col">
@@ -68,12 +69,12 @@ export default function Directory() {
               <span className="dir-count">119 564</span>
             </div>
             <ul>
-              <li><a href="#" className="directory-link">{locale === "ru" ? "Дизайнеры" : "Dizaynerlar"}</a></li>
-              <li><a href="#" className="directory-link">{locale === "ru" ? "Маркетинг" : "Marketing"}</a></li>
-              <li><a href="#" className="directory-link">{locale === "ru" ? "Системные администраторы" : "Tizim administratorlari"}</a></li>
-              <li><a href="#" className="directory-link">{locale === "ru" ? "Работа с текстами" : "Matnlar bilan ishlash"}</a></li>
-              <li><a href="#" className="directory-link">{locale === "ru" ? "IT-аутсорсинг" : "IT-autsorsing"}</a></li>
-              <li><a href="#" className="directory-link directory-link-all">{locale === "ru" ? "Все 1110 услуг" : "Barcha 1110 xizmatlar"}</a></li>
+              <li><Link href="/search" className="directory-link">{locale === "ru" ? "Дизайнеры" : "Dizaynerlar"}</Link></li>
+              <li><Link href="/search" className="directory-link">{locale === "ru" ? "Маркетинг" : "Marketing"}</Link></li>
+              <li><Link href="/search" className="directory-link">{locale === "ru" ? "Системные администраторы" : "Tizim administratorlari"}</Link></li>
+              <li><Link href="/search" className="directory-link">{locale === "ru" ? "Работа с текстами" : "Matnlar bilan ishlash"}</Link></li>
+              <li><Link href="/search" className="directory-link">{locale === "ru" ? "IT-аутсорсинг" : "IT-autsorsing"}</Link></li>
+              <li><Link href="/search" className="directory-link directory-link-all">{locale === "ru" ? "Все 1110 услуг" : "Barcha 1110 xizmatlar"}</Link></li>
             </ul>
           </div>
         </div>

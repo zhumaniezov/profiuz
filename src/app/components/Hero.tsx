@@ -1,9 +1,11 @@
 "use client";
 
 import { useLanguage } from "../i18n/LanguageContext";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
   const { t } = useLanguage();
+  const router = useRouter();
 
   return (
     <section className="hero" id="hero">
@@ -24,9 +26,12 @@ export default function Hero() {
               className="search-input"
               placeholder={t("searchPlaceholder")}
               id="search-input"
+              onKeyDown={(e) => {
+                if (e.key === "Enter") router.push("/search");
+              }}
             />
           </div>
-          <button className="search-btn" id="search-btn">
+          <button className="search-btn" id="search-btn" onClick={() => router.push("/search")}>
             {t("searchButton")}
           </button>
         </div>
