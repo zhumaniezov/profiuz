@@ -1,6 +1,8 @@
 "use client";
 
+import React, { useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
+import { Modal } from "./Modal";
 
 const categories: { key: string; bgClass: string; iconKey: string }[] = [
   { key: "catTutors", bgClass: "cat-bg-1", iconKey: "tutors" },
@@ -14,30 +16,48 @@ const categories: { key: string; bgClass: string; iconKey: string }[] = [
 ];
 
 export default function Categories() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
+  const [selectedCat, setSelectedCat] = useState<string | null>(null);
+
+  const getCategoryTranslationKey = (key: string): keyof typeof import("../i18n/translations").translations.ru => key as any;
 
   return (
     <section className="categories" id="categories">
       <div className="categories-inner">
         <div className="categories-grid">
-          {categories.map((cat, idx) => (
-            <a
-              href={`#${cat.iconKey}`}
+          {categories.map((cat) => (
+            <div
               className={`category-card ${cat.bgClass}`}
               key={cat.key}
               id={`category-${cat.iconKey}`}
+              onClick={() => setSelectedCat(cat.key)}
+              style={{ cursor: "pointer" }}
             >
-              <h3 className="category-name">{t(cat.key as any)}</h3>
+              <h3 className="category-name">{t(getCategoryTranslationKey(cat.key))}</h3>
               <div className="category-icon">
-                {/* A generic shape to simulate the images in profi.ru category cards */}
                 <svg viewBox="0 0 100 100" fill="currentColor" opacity="0.5">
                   <circle cx="50" cy="50" r="40" />
                 </svg>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>
+
+      <Modal
+        isOpen={!!selectedCat}
+        onClose={() => setSelectedCat(null)}
+        title={selectedCat ? t(getCategoryTranslationKey(selectedCat)) : ""}
+      >
+        <p style={{ marginBottom: "24px", color: "var(--fg-muted)" }}>
+          {selectedCat ? t(getCategoryTranslationKey(`${selectedCat}Desc`)) : ""}
+        </p>
+        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+          <button className="btn-primary" onClick={() => setSelectedCat(null)}>
+            {locale === "ru" ? "Найти специалиста" : "Mutaxassisni topish"}
+          </button>
+        </div>
+      </Modal>
     </section>
   );
 }

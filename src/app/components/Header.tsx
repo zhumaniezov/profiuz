@@ -1,9 +1,11 @@
 "use client";
 
 import { useLanguage } from "../i18n/LanguageContext";
+import { useAppContext } from "../context/AppContext";
 
 export default function Header() {
   const { t, toggleLocale, locale } = useLanguage();
+  const { city, setCityModalOpen, setAuthModalOpen, isLoggedIn } = useAppContext();
 
   return (
     <header className="header">
@@ -15,8 +17,12 @@ export default function Header() {
             <span className="logo-uz">уз</span>
           </a>
 
-          <div className="header-city">
-            {locale === "ru" ? "Ташкент" : "Toshkent"}
+          <div
+            className="header-city"
+            onClick={() => setCityModalOpen(true)}
+            style={{ cursor: "pointer" }}
+          >
+            {city}
             <span className="header-city-arrow">▼</span>
           </div>
         </div>
@@ -31,9 +37,20 @@ export default function Header() {
             <span className="arrow-icon"> ↗</span>
           </a>
 
-          <a href="#login" className="header-login-btn" id="login-btn">
-            {t("loginRegister")}
-          </a>
+          {isLoggedIn ? (
+            <a href="/profile" className="header-login-btn" id="profile-btn" style={{ fontWeight: 600, color: "var(--primary)" }}>
+              {locale === "ru" ? "Личный кабинет" : "Shaxsiy kabinet"}
+            </a>
+          ) : (
+            <button
+              onClick={() => setAuthModalOpen(true)}
+              className="header-login-btn"
+              id="login-btn"
+              style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "inherit" }}
+            >
+              {t("loginRegister")}
+            </button>
+          )}
         </div>
 
         <button className="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">

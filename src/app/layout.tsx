@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+import { LanguageProvider } from "./i18n/LanguageContext";
+import { AppProvider } from "./context/AppContext";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -24,7 +28,15 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body>{children}</body>
+      <body>
+        <LanguageProvider>
+          <AppProvider>
+            <Header />
+            <main className="page-enter">{children}</main>
+            <Footer />
+          </AppProvider>
+        </LanguageProvider>
+      </body>
     </html>
   );
 }
