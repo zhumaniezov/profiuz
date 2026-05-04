@@ -3,20 +3,24 @@
 import { useLanguage } from "../i18n/LanguageContext";
 
 export default function CTA() {
-  const { t } = useLanguage();
+  const { locale } = useLanguage();
 
   return (
     <section className="cta" id="cta">
       <div className="cta-inner">
-        <h2 className="cta-title" id="cta-title">{t("ctaTitle")}</h2>
-        <p className="cta-subtitle">{t("ctaSubtitle")}</p>
-        <div className="cta-buttons">
-          <a href="#order" className="btn-primary" id="cta-order-btn">
-            {t("ctaButton")}
-          </a>
-          <a href="#specialist-register" className="btn-outline" id="cta-specialist-btn">
-            {t("ctaSpecialist")}
-          </a>
+        <div className="cta-box">
+          <h2 className="cta-title">
+            {locale === "ru" ? (
+              <>Попробуйте <br />новый <span>Профи.ру</span></>
+            ) : (
+              <>Yangi <br /><span>Profi.uz</span> ni sinab ko'ring</>
+            )}
+          </h2>
+          <div className="cta-buttons">
+            <button className="btn-light" style={{ padding: "18px 36px", fontSize: "17px" }}>
+              {locale === "ru" ? "Скачать приложение" : "Ilovani yuklab olish"}
+            </button>
+          </div>
         </div>
       </div>
     </section>

@@ -10,12 +10,12 @@ export default function Footer() {
       <div className="footer-inner">
         <div className="footer-top">
           <div className="footer-col">
-            <a href="/" className="header-logo" style={{ marginBottom: "16px" }}>
-              <span className="logo-profi">профи</span>
-              <span className="logo-dot">:</span>
-              <span className="logo-uz">уз</span>
+            <a href="/" className="header-logo" style={{ display: "inline-flex", marginBottom: "16px" }}>
+              <span className="logo-profi" style={{ color: "var(--color-primary)" }}>профи</span>
+              <span className="logo-dot" style={{ color: "var(--color-primary)", margin: "0 -1px", position: "relative", top: "-2px" }}>:</span>
+              <span className="logo-uz" style={{ color: "var(--color-primary)", fontSize: "0.8em", marginLeft: "2px" }}>ру</span>
             </a>
-            <p style={{ fontSize: "12px", color: "var(--fg-muted)" }}>{t("madeInUzbekistan")}</p>
+            <p style={{ fontSize: "15px", color: "var(--color-muted)" }}>{t("madeInUzbekistan")}</p>
           </div>
           <div className="footer-col">
             <h4>{t("forClients")}</h4>
@@ -38,8 +38,8 @@ export default function Footer() {
             <a href="#vacancies">{t("vacancies")}</a>
           </div>
         </div>
-        <div style={{ marginTop: "32px", paddingTop: "24px", borderTop: "1px solid var(--border)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <p style={{ fontSize: "12px", color: "var(--fg-muted)" }}>{t("copyright")}</p>
+        <div className="footer-bottom">
+          <p className="footer-copy">{t("copyright")}</p>
           <span style={{ fontSize: "20px" }}>🇺🇿</span>
         </div>
       </div>

@@ -12,9 +12,9 @@ export default function Header() {
       <div className="header-inner">
         <div className="header-left">
           <a href="/" className="header-logo" id="header-logo">
-            <span className="logo-profi">профи</span>
-            <span className="logo-dot">:</span>
-            <span className="logo-uz">уз</span>
+            <span className="logo-profi" style={{ color: "var(--color-primary)" }}>профи</span>
+            <span className="logo-dot" style={{ color: "var(--color-primary)", margin: "0 -1px", position: "relative", top: "-2px" }}>:</span>
+            <span className="logo-uz" style={{ color: "var(--color-primary)", fontSize: "0.8em", marginLeft: "2px" }}>ру</span>
           </a>
 
           <div

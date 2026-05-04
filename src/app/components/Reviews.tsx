@@ -12,50 +12,39 @@ const reviewsData = [
 ];
 
 export default function Reviews() {
-  const { t, locale } = useLanguage();
+  const { locale } = useLanguage();
 
   return (
     <section className="reviews" id="reviews">
       <div className="reviews-inner">
-        <div className="reviews-header">
-          <h2 className="section-title" id="reviews-title">{t("reviewsTitle")}</h2>
-          <div className="reviews-stats">
-            <div className="reviews-stat-big">
-              <span className="reviews-stat-number">{t("reviewsCount")}</span>
-              <span className="reviews-stat-label">{t("reviewsSubtitle")}</span>
-            </div>
-            <div className="reviews-stat-positive">
-              <span className="reviews-stat-percent">{t("positivePercent")}</span>
-              <span className="reviews-stat-label">{t("positiveReviews")}</span>
-            </div>
-          </div>
-        </div>
+        <h2 className="section-title" id="reviews-title">
+          {locale === "ru" ? "Отзывы" : "Sharhlar"}
+        </h2>
+        <p className="reviews-subtitle">
+          {locale === "ru" 
+            ? "854 381 отзыв оставили клиенты за последние 12 месяцев. Из них 827 153 — положительные." 
+            : "Oxirgi 12 oy ichida mijozlar 854 381 sharh qoldirdilar. Ulardan 827 153 tasi — ijobiy."}
+        </p>
+
         <div className="reviews-grid">
           {reviewsData.map((review, i) => (
             <div className="review-card" key={i} id={`review-card-${i}`}>
-              <div className="review-card-top">
+              <div className="review-head">
                 <div className="review-avatar">
                   {(locale === "ru" ? review.nameRu : review.nameUz).charAt(0)}
                 </div>
-                <div className="review-meta">
-                  <span className="review-name">
-                    {locale === "ru" ? review.nameRu : review.nameUz}
-                  </span>
-                  <div className="review-rating">
-                    <span className="review-stars">
-                      {"★".repeat(Math.floor(review.rating))}
-                      {review.rating % 1 > 0 ? "☆" : ""}
-                    </span>
-                    <span className="review-rating-num">{review.rating}</span>
-                    <span className="review-count">· {review.count} {locale === "ru" ? "отзывов" : "sharh"}</span>
+                <div>
+                  <div className="review-profile-name">{locale === "ru" ? review.nameRu : review.nameUz}</div>
+                  <div className="review-profile-rating">
+                    <span className="review-stars">{"★".repeat(Math.round(review.rating))}</span> {review.rating} · {review.count} {locale === "ru" ? "отзывов" : "sharh"}
                   </div>
                 </div>
               </div>
-              <p className="review-service">
+              <p className="review-text">
                 {locale === "ru" ? review.serviceRu : review.serviceUz}
               </p>
-              <div className="review-badge">
-                {locale === "ru" ? "Пять с плюсом" : "A'lo baho"}
+              <div className="review-meta">
+                {locale === "ru" ? "Оценка: Пять с плюсом" : "Baho: A'lo"}
               </div>
             </div>
           ))}
