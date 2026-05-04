@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { LanguageProvider } from "./i18n/LanguageContext";
 import { AppProvider } from "./context/AppContext";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import LayoutWrapper from "./components/LayoutWrapper";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -31,9 +30,7 @@ export default function RootLayout({
       <body>
         <LanguageProvider>
           <AppProvider>
-            <Header />
-            <main className="page-enter">{children}</main>
-            <Footer />
+            <LayoutWrapper>{children}</LayoutWrapper>
           </AppProvider>
         </LanguageProvider>
       </body>
